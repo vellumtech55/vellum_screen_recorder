@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vellum Tech Studio</title>
+    <style>
+        /* Basic CSS for styling */
+        body { font-family: Arial, sans-serif; margin: 0; padding:0; background-color: #0b0f2a; }
+        header {background-color: #111; color: white; text-align: center; padding: 0.5rem; }
+        
+        /* Tab Navigation Styles */
+        nav { background-color: #555; padding: 0; text-align: center; display: flex; border-bottom: 2px solid #00e5ff; }
+        nav button { color: white; background-color: #111827; cursor: pointer; transition: background-color 0.6s; flex: 1; padding: 1rem;}
+        nav button:hover { background-color: #900; }
+        nav button.active { background-color: #111; border-bottom: 2px solid #00e5ff; }
+        
+        /* Tab Content Styles */
+        .tab-container { position: relative; }
+        .tab-content { 
+            display: none; 
+            padding: 2rem; 
+            max-width: 800px; 
+            margin: auto;
+            animation: fadeIn 0.3s;
+        }
+        .tab-content.active { display: block; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        tool { border: 1px solid #ddd; padding: 1rem; margin: 1rem 0; background-color: white; }
+        buy-button { display: inline-block; background-color: white; color: rgb(0, 0, 0); padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; }
+        footer { background-color: #; color: rgb(61, 61, 61); text-align: center; padding: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style=font-family:Georgia;color:#00e5ff;>Vellum Gaming</h1>
+    </header>
+    
+    <nav>
+        <button class="tab-button active" data-tab="home">Home</button>
+        <button class="tab-button" data-tab="about">About</button>
+        <button class="tab-button" data-tab="applications">applications</button>
+        <button class="tab-button" data-tab="contact">Contact and legal</button>
+        
+    </nav>
+    
+    <div class="tab-container">
+        <section id="home" class="tab-content active">
+            <h2></h2>
+            <p></p>
+        </section>
+        
+        <section id="about" class="tab-content">
+            <h2 style="font-family: Georgia">About Us</h2>
+            <p></p>
+        </section>
+      
+        <section id="applications" class="tab-content">
+            <h2>applications</h2>
+            <div>
+              <button style="background-color:black; color:white; width: 110; height: 50; font-family: Georgia"><a></a></button>
+              <h3>More Coming Soon</h3>
+            </div>
+        </section>
+                <section id="contact" class="tab-content">
+            <h2>legal</h2>
+            <div>
+                <p>END USER LICENSE AGREEMENT (EULA) & TERMS OF USE Last Updated: 4/11/26 This End User License Agreement ("Agreement") is a legal agreement between you the User and the company that sold the product for the use of the software provided The Licensor grants you a **non-exclusive, non-transferable, non-refundable license** to use the Software for personal or commercial use, subject to the terms below. You are **not purchasing the Software**, but a license to use it. You agree that you will NOT: * Resell, sublicense, rent, lease, or distribute the Software * Share the Software files with others * Reverse engineer, decompile, or attempt to extract the source code * Modify or create derivative works based on the Software * Use the Software for illegal or unauthorized purposes The Software and all related intellectual property remain the sole property of the Licensor. The Software is provided AS IS, without warranty of any kind. The Licensor does not guarantee that: * The Software will be error-free * The Software will meet your specific needs * The Software will operate without interruptions To the maximum extent permitted by law, the Licensor shall NOT be liable for: * Any damages, losses, or data loss * System failures or software conflicts * Indirect, incidental, or consequential damages Your use of the Software is at your own risk. All sales are final unless otherwise stated on the purchase platform (e.g., Gumroad refund policies may apply This license is automatically terminated if you violate any of these terms. Upon termination, you must delete all copies of the Software. The Licensor reserves the right to update or modify these terms at any time. This Agreement shall be governed by and interpreted in accordance with the laws of North Carolina,USA If you have any questions about this Agreement, contact: use the contact form above By downloading, installing, or using the Software, you agree to this Agreement. </p>
+            </div>
+       </section>
+    <footer>
+        <p>&copy; 2026 Vellum Studio. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(tabName).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
